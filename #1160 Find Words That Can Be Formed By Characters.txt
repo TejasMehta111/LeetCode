@@ -1,0 +1,24 @@
+def countCharacters(words, chars):
+        """
+        :type words: List[str]
+        :type chars: str
+        :rtype: int
+        """
+        l = 0
+        
+        charss = list(chars)
+        #print(charss)
+        charsscopy = charss.copy()
+        for w in words:
+            tempwords = list(w)
+            #print(tempwords)
+            ltemp = 0
+            for tt in tempwords:
+                if tt in charsscopy:
+                    ltemp = ltemp + 1
+                    charsscopy.remove(tt)
+            if ltemp == len(tempwords):
+                l = l + ltemp
+            charsscopy = charss.copy()
+                
+        return l
